@@ -234,4 +234,10 @@ public class ChatBot
 		return okToQuit;
 	}
 
+	public String processText(String message)
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

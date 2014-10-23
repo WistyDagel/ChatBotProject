@@ -13,7 +13,7 @@ public class ChatBotView
 	{
 		this.baseController = baseController; 
 	}
-	
+	 
 	public String displayChatBotConversations(String input)
 	{
 		String output = "";
@@ -22,4 +22,10 @@ public class ChatBotView
 		
 		return output;
 	}
+	
+	public void displayInformation(String input)
+	{
+		JOptionPane.showMessageDialog(null, input);
+	}
+	
 }
