@@ -57,7 +57,7 @@ public class ChatBotController
 
 	public void start()
 	{
-		//String message = JOptionPane.showInputDialog(null, "Welcome to Chatbot, type in your name");
+		/*//String message = JOptionPane.showInputDialog(null, "Welcome to Chatbot, type in your name");
 		
 //		while(!notSoCleverBot.quitChecker(message))
 //		{
@@ -73,7 +73,7 @@ public class ChatBotController
 			message = appView.displayChatBotConversations(message);
 		}
 		
-		quit();
+		quit();*/
 		
 		//if(notSoCleverBot.quitChecker(message))
 		//{
