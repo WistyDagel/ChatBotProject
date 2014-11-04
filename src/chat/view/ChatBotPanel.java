@@ -21,7 +21,10 @@ public class ChatBotPanel extends JPanel
 	private SpringLayout baseLayout;
 	private JLabel lblTextHere;
 	private JLabel lblWelcomeToChatbot;
-	
+/**
+ * This is for the users interface, it establishes the location for the button, message input, etc.
+ * @param baseController
+ */
 	public ChatBotPanel(ChatBotController baseController) 
 	{
 		this.baseController = baseController;
@@ -49,13 +52,17 @@ public class ChatBotPanel extends JPanel
 		setupLayout();
 		setupListeners();
 	}
-
+/**
+ * sets the wrap panel and line wrap to true 
+ */
 	private void setupScrollPane()
 	{
 		chatArea.setLineWrap(true);
 		chatArea.setWrapStyleWord(true);
 	}
-
+/**
+ * It establishes the button layout, screen layout, where you add the location for each item in the panel 
+ */
 	private void setupPanel()
 	{
 		this.setBackground(Color.RED);
@@ -85,10 +92,15 @@ public class ChatBotPanel extends JPanel
 		add(lblWelcomeToChatbot);
 		
 	}
-	
+/**
+ * 	
+ */
 	private void setupLayout()
 	{
 	}
+/**
+ * uses the button to display the action Listener
+ */
 	private void setupListeners()
 	{
 		sampleButton.addActionListener(new ActionListener()
@@ -104,7 +116,10 @@ public class ChatBotPanel extends JPanel
 		});
 		
 	}
-
+/**
+ * where the text is processed to display to the user.
+ * @param input
+ */
 	public void displayTextToUser(String input)
 	{
 		chatArea.append("\n" + input);
