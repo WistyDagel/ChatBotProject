@@ -4,6 +4,7 @@ import javax.swing.JOptionPane;
 
 import chat.model.ChatBot;
 import chat.view.ChatBotFrame;
+import chat.view.ChatBotPanel;
 import chat.view.ChatBotView;
 
 public class ChatBotController 
@@ -57,32 +58,29 @@ public class ChatBotController
 
 	public void start()
 	{
-		/*//String message = JOptionPane.showInputDialog(null, "Welcome to Chatbot, type in your name");
+		/**
+		 * Recommend doing this line of code to display the users text within the panel. 
+		 */
+		ChatBotPanel myAppPanel = (ChatBotPanel) baseFrame.getContentPane();
+		myAppPanel.displayTextToUser(startMessage);
 		
-//		while(!notSoCleverBot.quitChecker(message))
-//		{
-//			message = appView.displayChatBotConversations(message);
-//			message = notSoCleverBot.processText(message);
-//		}
+		//((ChatBotPanel) baseFrame.getContentPane()).displayTextToUser(startMessage);
 		
-		String message = appView.displayChatBotConversations(startMessage);
-		
-		while(!notSoCleverBot.quitChecker(message))
-		{
-			message = notSoCleverBot.processText(message);
-			message = appView.displayChatBotConversations(message);
-		}
-		
-		quit();*/
-		
-		//if(notSoCleverBot.quitChecker(message))
-		//{
-		//	quit();
-		//}
-		
-		//JOptionPane.showMessageDialog(null, "Wait! Don't go yet...");
+	
+		String message = notSoCleverBot.processText(startMessage);
+		message = appView.displayChatBotConversations(message);
 	
 	}
+	
+	public String sendTextToChatBot(String userInput)
+	{
+		String respondText = "";
+		
+		respondText = notSoCleverBot.processText(userInput);
+		
+		return respondText;
+	}	
+		
 	
 	/**
 	 * Quits the Chatbot application with a message to the user that the application is closing 

@@ -34,6 +34,12 @@ public class ChatBotPanel extends JPanel
 		chatArea.setBackground(Color.YELLOW);
 		chatPane = new JScrollPane(chatArea);
 		baseLayout = new SpringLayout();
+		baseLayout.putConstraint(SpringLayout.NORTH, chatPane, 19, SpringLayout.NORTH, this);
+		baseLayout.putConstraint(SpringLayout.EAST, chatPane, -127, SpringLayout.EAST, this);
+		baseLayout.putConstraint(SpringLayout.NORTH, sampleButton, -1, SpringLayout.NORTH, sampleField);
+		baseLayout.putConstraint(SpringLayout.WEST, sampleButton, 6, SpringLayout.EAST, sampleField);
+		baseLayout.putConstraint(SpringLayout.EAST, sampleField, -220, SpringLayout.EAST, this);
+		baseLayout.putConstraint(SpringLayout.WEST, chatPane, 25, SpringLayout.WEST, this);
 		
 		
 		
@@ -57,18 +63,8 @@ public class ChatBotPanel extends JPanel
 		
 		this.add(sampleButton);
 		this.add(sampleField);
-		
-		this.add(CapField);
 		this.add(chatPane);
-		
-		baseLayout.putConstraint(SpringLayout.NORTH, sampleButton, 21, SpringLayout.NORTH, this);
-		baseLayout.putConstraint(SpringLayout.WEST, sampleButton, 238, SpringLayout.WEST, this);
-		baseLayout.putConstraint(SpringLayout.SOUTH, chatPane, -115, SpringLayout.NORTH, sampleField);
-		baseLayout.putConstraint(SpringLayout.EAST, chatPane, -6, SpringLayout.WEST, sampleButton);
-		baseLayout.putConstraint(SpringLayout.WEST, chatPane, 25, SpringLayout.WEST, this);
-		baseLayout.putConstraint(SpringLayout.NORTH, chatPane, 19, SpringLayout.NORTH, this);
 		baseLayout.putConstraint(SpringLayout.NORTH, sampleField, 245, SpringLayout.NORTH, this);
-		baseLayout.putConstraint(SpringLayout.EAST, sampleField, -165, SpringLayout.EAST, this);
 		
 		
 		lblTextHere = new JLabel("Text Here!!");
@@ -79,24 +75,14 @@ public class ChatBotPanel extends JPanel
 		lblTextHere.setForeground(Color.YELLOW);
 		add(lblTextHere);
 		
-		JButton btnNewButton = new JButton("Submit");
-		btnNewButton.setForeground(Color.BLACK);
-		baseLayout.putConstraint(SpringLayout.NORTH, btnNewButton, 244, SpringLayout.NORTH, this);
-		baseLayout.putConstraint(SpringLayout.WEST, btnNewButton, 6, SpringLayout.EAST, sampleField);
-		add(btnNewButton);
-		
 		lblWelcomeToChatbot = new JLabel("WELCOME TO CHATBOT!!!!!!");
+		baseLayout.putConstraint(SpringLayout.SOUTH, chatPane, 0, SpringLayout.NORTH, lblWelcomeToChatbot);
+		baseLayout.putConstraint(SpringLayout.NORTH, lblWelcomeToChatbot, 162, SpringLayout.NORTH, this);
+		baseLayout.putConstraint(SpringLayout.SOUTH, lblWelcomeToChatbot, -22, SpringLayout.NORTH, sampleButton);
 		baseLayout.putConstraint(SpringLayout.WEST, lblWelcomeToChatbot, 97, SpringLayout.WEST, this);
-		baseLayout.putConstraint(SpringLayout.SOUTH, lblWelcomeToChatbot, -22, SpringLayout.NORTH, btnNewButton);
 		baseLayout.putConstraint(SpringLayout.EAST, lblWelcomeToChatbot, 272, SpringLayout.WEST, this);
 		lblWelcomeToChatbot.setForeground(Color.YELLOW);
 		add(lblWelcomeToChatbot);
-		
-		JButton btnIfYouLike = new JButton("IF YOU LIKE CAPTAIN AMERICA CLICK HERE!!!");
-		baseLayout.putConstraint(SpringLayout.NORTH, lblWelcomeToChatbot, 6, SpringLayout.SOUTH, btnIfYouLike);
-		baseLayout.putConstraint(SpringLayout.NORTH, btnIfYouLike, 3, SpringLayout.SOUTH, chatPane);
-		baseLayout.putConstraint(SpringLayout.WEST, btnIfYouLike, 0, SpringLayout.WEST, chatPane);
-		add(btnIfYouLike);
 		
 	}
 	
@@ -109,18 +95,20 @@ public class ChatBotPanel extends JPanel
 		{
 			public void actionPerformed(ActionEvent click)
 			{
-				sampleField.setText(sampleField.getText() + ":O HOLY CRAP!");
+				String userTypedText = sampleField.getText();
+				String chatbotResponse = baseController.sendTextToChatBot(userTypedText);
+				displayTextToUser(userTypedText);
+				displayTextToUser(chatbotResponse);
+				sampleField.setText("");
 			}
 		});
-		CapButton.addActionListener(new ActionListener()
-		{
-			public void actionPerformed(ActionEvent click)
-			{
-				CapButton.setText(CapField.getText() + "HE IS DA GREATEST!!!!");
-			}
-		
-	
-		});	
 		
 	}
+
+	public void displayTextToUser(String input)
+	{
+		chatArea.append("\n" + input);
+	}
+	
 }
+

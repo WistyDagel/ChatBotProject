@@ -9,6 +9,7 @@ import chat.controller.ChatBotRunner;
 public class ChatBotFrame extends JFrame
 {
 	private ChatBotPanel basePanel;
+	
 	public ChatBotFrame(ChatBotController baseController) 
 	{
 		basePanel = new ChatBotPanel(baseController);

@@ -14,10 +14,11 @@ public class ChatBot
 	private CharSequence contentArea;
 	private String input;
 	private ArrayList<String> memeList;
+	private User myUser;
 
 	/**
 	 * Creates a ChatBot object with a specified name. Initializes the total
-	 * chats to 0
+	 * chats to 0. Creates and fills the memelist
 	 * 
 	 * @param name
 	 *            The name of the ChatBot
@@ -29,6 +30,7 @@ public class ChatBot
 		contentArea = "";
 		memeList = new ArrayList<String>();
 		fillTheMemeList();
+		//this. means talk to the current class
 	}
 
 	/**
@@ -91,7 +93,7 @@ public class ChatBot
 	 *            The text displayed for the user
 	 * @return Returns the text back to the user
 	 */
-	public String pocessText(String userText)
+	public String processText(String userText)
 	{
 		String processedText = "";
 		incrementChats();
@@ -232,12 +234,6 @@ public class ChatBot
 		}
 
 		return okToQuit;
-	}
-
-	public String processText(String message)
-	{
-		// TODO Auto-generated method stub
-		return null;
 	}
 
 }
