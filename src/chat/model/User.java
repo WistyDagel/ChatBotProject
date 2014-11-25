@@ -6,7 +6,7 @@ public class User
 	private String favoriteMovie;
 	private int age;
 	private boolean isTall;
-	private boolean isblonde;
+	private boolean isBlonde;
 	
 
 
@@ -14,6 +14,9 @@ public class User
 	{
 		this.name = "";
 		this.age = 0;
+		this.favoriteMovie = "";
+		this.isBlonde = false;
+		this.isTall = false;
 		
 		
 	}
@@ -38,14 +41,14 @@ public class User
 		this.isTall = isTall;
 	}
 
-	public boolean isIsblonde()
+	public boolean isIsBlonde()
 	{
-		return isblonde;
+		return isBlonde;
 	}
 
 	public void setIsblonde(boolean isblonde)
 	{
-		this.isblonde = isblonde;
+		this.isBlonde = isBlonde;
 	}
 	
 	public int getAge()

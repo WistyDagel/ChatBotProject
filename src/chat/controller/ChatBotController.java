@@ -67,7 +67,7 @@ public class ChatBotController
 		//((ChatBotPanel) baseFrame.getContentPane()).displayTextToUser(startMessage);
 		
 	
-		String message = notSoCleverBot.processText(startMessage);
+		String message = notSoCleverBot.processedText(startMessage);
 		message = appView.displayChatBotConversations(message);
 	
 	}
@@ -76,7 +76,7 @@ public class ChatBotController
 	{
 		String respondText = "";
 		
-		respondText = notSoCleverBot.processText(userInput);
+		respondText = notSoCleverBot.processedText(userInput);
 		
 		return respondText;
 	}	
