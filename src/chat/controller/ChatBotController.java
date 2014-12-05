@@ -1,11 +1,10 @@
 package chat.controller;
 
-import javax.swing.JOptionPane;
-
 import chat.model.ChatBot;
 import chat.view.ChatBotFrame;
 import chat.view.ChatBotPanel;
 import chat.view.ChatBotView;
+
 
 public class ChatBotController 
 {
@@ -13,26 +12,30 @@ public class ChatBotController
 	 * The GUI view for the application. 
 	 */
 	private ChatBotView appView;
+	
 	/**
 	 * The Chatbot Model instance.
 	 */
 	private ChatBot notSoCleverBot;
+	
 	/**
 	 * The startup message for the Chatbot application.
 	 */
 	private String startMessage;
+	
 	/**
 	 * The ending message for the Chatbot.
 	 */
 	private String endMessage;
+	
 	/**
 	 * GUI frame for the application.
 	 */
 	private ChatBotFrame baseFrame;
 	
-	/**
-	 * Creates a ChatBotController and initializes the associated View and Model objects. 
-	 */
+/**
+ * Creates a ChatBotController and initializes the associated View and Model objects. 
+  */
 	public ChatBotController()
 	{
 		appView = new ChatBotView(this);
@@ -52,6 +55,10 @@ public class ChatBotController
 		return notSoCleverBot;
 	}
 	
+	pblic ChatbotFrame getBaseFrame()
+	{
+		return baseFrame;
+	}
 	/**
 	 * Starts the ChatBot Application. 
 	 */
@@ -65,13 +72,19 @@ public class ChatBotController
 		myAppPanel.displayTextToUser(startMessage);
 		
 		//((ChatBotPanel) baseFrame.getContentPane()).displayTextToUser(startMessage);
-		
-	
-		String message = notSoCleverBot.processedText(startMessage);
-		message = appView.displayChatBotConversations(message);
-	
 	}
+	/**
+	 * Quits the Chatbot application with a message to the user that the application
+	 */
+	 private void quit()
+	 {
+	 	appview.displayInformation("Bye");
+	 	System.exit(0);
+	 }
 	
+	/**
+	 * This method calls upon a response
+	 */
 	public String sendTextToChatBot(String userInput)
 	{
 		String respondText = "";
@@ -81,13 +94,4 @@ public class ChatBotController
 		return respondText;
 	}	
 		
-	
-	/**
-	 * Quits the Chatbot application with a message to the user that the application is closing 
-	 */
-	private void quit()
-	{
-		JOptionPane.showMessageDialog(null, "bye");
-		System.exit(0);
-	}
 }
