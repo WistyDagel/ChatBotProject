@@ -5,6 +5,11 @@ import chat.view.ChatBotFrame;
 import chat.view.ChatBotPanel;
 import chat.view.ChatBotView;
 
+/**
+ * Application Controller is what runs the project. Controls the View and Model packages.
+ * @author Chris Dazley
+ * @version 
+ */
 
 public class ChatBotController 
 {
