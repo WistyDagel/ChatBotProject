@@ -2,11 +2,14 @@ package chat.model;
 
 public class User
 {
+	// four data members
+	//at least two different types (String, int, boolean, double....)
 	private String name;
 	private String favoriteMovie;
 	private int age;
 	private boolean isTall;
 	private boolean isBlonde;
+	private double weight;
 	
 
 
@@ -17,6 +20,7 @@ public class User
 		this.favoriteMovie = "";
 		this.isBlonde = false;
 		this.isTall = false;
+		this.weight = -90000;
 		
 		
 	}
@@ -59,6 +63,15 @@ public class User
 	public void setAge(int age)
 	{
 		this.age = age;
+	}
+	
+	public double getWeight()
+	{
+		return weight;
+	}
+	public void setWeight(double weight)
+	{
+		this.weight = weight;
 	}
 
 	public String getName()
