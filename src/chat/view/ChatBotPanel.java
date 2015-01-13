@@ -60,7 +60,7 @@ public class ChatBotPanel extends JPanel
 	private void setupPanel()
 	{
 		this.setBackground(Color.Blue);
-		this.setsize(400, 400);
+		this.setSize(400, 400);
 		this.setLayout(baseLayout);
 		this.add(sampleButton);
 		this.add(sampleField);
