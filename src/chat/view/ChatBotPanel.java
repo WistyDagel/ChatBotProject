@@ -28,24 +28,17 @@ public class ChatBotPanel extends JPanel
 	public ChatBotPanel(ChatBotController baseController) 
 	{
 		this.baseController = baseController;
+		
 		sampleField = new JTextField(25);
-		sampleField.setBackground(Color.YELLOW);
+		sampleField.setBackground(Color.GRAY);
 		sampleField.setForeground(Color.BLACK);
 		sampleButton = new JButton("click on me please ;D");
 		sampleButton.setForeground(Color.BLACK);
+		
 		chatArea = new JTextArea(5,25);
-		chatArea.setBackground(Color.YELLOW);
+		chatArea.setBackground(Color.CYAN);
 		chatPane = new JScrollPane(chatArea);
 		baseLayout = new SpringLayout();
-		baseLayout.putConstraint(SpringLayout.NORTH, chatPane, 19, SpringLayout.NORTH, this);
-		baseLayout.putConstraint(SpringLayout.EAST, chatPane, -127, SpringLayout.EAST, this);
-		baseLayout.putConstraint(SpringLayout.NORTH, sampleButton, -1, SpringLayout.NORTH, sampleField);
-		baseLayout.putConstraint(SpringLayout.WEST, sampleButton, 6, SpringLayout.EAST, sampleField);
-		baseLayout.putConstraint(SpringLayout.EAST, sampleField, -220, SpringLayout.EAST, this);
-		baseLayout.putConstraint(SpringLayout.WEST, chatPane, 25, SpringLayout.WEST, this);
-		
-		
-		
 		
 		setupScrollPane();
 		setupPanel();
@@ -66,12 +59,27 @@ public class ChatBotPanel extends JPanel
  */
 	private void setupPanel()
 	{
-		this.setBackground(Color.RED);
+		this.setBackground(Color.Blue);
+		this.setsize(400, 400);
 		this.setLayout(baseLayout);
-		
 		this.add(sampleButton);
 		this.add(sampleField);
 		this.add(chatPane);
+	
+		
+	}
+/**
+ * 	
+ */
+	private void setupLayout()
+	{
+		baseLayout.putConstraint(SpringLayout.NORTH, chatPane, 19, SpringLayout.NORTH, this);
+		baseLayout.putConstraint(SpringLayout.EAST, chatPane, -127, SpringLayout.EAST, this);
+		baseLayout.putConstraint(SpringLayout.NORTH, sampleButton, -1, SpringLayout.NORTH, sampleField);
+		baseLayout.putConstraint(SpringLayout.WEST, sampleButton, 6, SpringLayout.EAST, sampleField);
+		baseLayout.putConstraint(SpringLayout.EAST, sampleField, -220, SpringLayout.EAST, this);
+		baseLayout.putConstraint(SpringLayout.WEST, chatPane, 25, SpringLayout.WEST, this);
+		
 		baseLayout.putConstraint(SpringLayout.NORTH, sampleField, 245, SpringLayout.NORTH, this);
 		
 		
@@ -91,13 +99,6 @@ public class ChatBotPanel extends JPanel
 		baseLayout.putConstraint(SpringLayout.EAST, lblWelcomeToChatbot, 272, SpringLayout.WEST, this);
 		lblWelcomeToChatbot.setForeground(Color.YELLOW);
 		add(lblWelcomeToChatbot);
-		
-	}
-/**
- * 	
- */
-	private void setupLayout()
-	{
 	}
 /**
  * uses the button to display the action Listener
