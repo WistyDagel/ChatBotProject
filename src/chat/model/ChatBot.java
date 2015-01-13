@@ -106,20 +106,20 @@ public class ChatBot
 	public String processText(String currentInput)
 	{
 		String result = "";
-		if (getChatCount() < 5)
+		if (getNumberOfChats() < 5)
 		{
 			result = introduceUser(currentInput);
 		}
 		else if (currentInput != null && currentInput.length() > 0)
 		{
-			result = randomChatConversation(currentInput);
+			result = randomChatTopic(currentInput);
 		}
 		else
 		{
 			result = "Pleas Use Some WORDS!";
 			chatCount--;
 		}
-		updateChatCount();
+		updateNumberOfChats();
 		return result;
 }
 		
