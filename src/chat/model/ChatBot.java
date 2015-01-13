@@ -145,7 +145,7 @@ public class ChatBot
 			int age = Integer.parseInt(userText);
 			myUser.setAge(age);
 			processedText = "Hello" + myUser.getName() + "you are really" + myUser.getAge() +"years old?";
-			processedText += "\nWhat is your favorite movie?";
+			processedText += "\nWhat is your weight?";
 		}
 		else if (getChatCount() == 2)
 		{
