@@ -157,13 +157,13 @@ public class ChatBot
 		{
 			boolean userHair = Boolean.parseBoolean(input);
 			myUser.setHasBlondeHair(userHair);
-			userQuestion = "Some amazing or dissapointing comment about blonde hair" + myUser.getUserName() + " do you have a favorite movie?";
+			userQuestion = "Some amazing or dissapointing comment about blonde hair" + myUser.getUserName() + " Are Tall or Small????";
 		}
 		else
 		{
-			boolean userMovie = Boolean.parseBoolean(input);
-			myUser.setFavoriteMovie(userMovie);
-			userQuestion = "I love that movie! :D " + myUser.getUserName() + " What do you wanna talk about next???";
+			boolean userHeight = Boolean.parseBoolean(input);
+			myUser.sethasAHeight(userHeight);
+			userQuestion = "Jeez you're as tall as Mt. Everest!!! ;D " + myUser.getUserName() + " What do you wanna talk about next???";
 		}
 		
 		return userQuestion;
