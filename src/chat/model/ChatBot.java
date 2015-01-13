@@ -147,13 +147,13 @@ public class ChatBot
 			processedText = "Hello" + myUser.getName() + "you are really" + myUser.getAge() +"years old?";
 			processedText += "\nWhat is your weight?";
 		}
-		else if (getChatCount() == 2)
+		else if (numberOfChats() == 2)
 		{
 			double userWeight = Double.parseDouble(input);
 			myUser.setWeight(userWeight);
 			userQuestion = "Yowsers! That is a lot less than The Statue of Liberty " + myUser.getUserName() + " do you have blonde hair?";
 		}
-		else if (getChatCount() == 3)
+		else if (numberOfChats() == 3)
 		{
 			boolean userHair = Boolean.parseBoolean(input);
 			myUser.setHasBlondeHair(userHair);
